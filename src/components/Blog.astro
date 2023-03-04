@@ -5,7 +5,7 @@ import image2 from "../assets/programmer-wallpaper.webp";
 // import FormattedDate from "./FormattedDate.astro";
 // import Blogtitle from "./Blogtitle.astro";
 
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+const posts = (await Astro.glob("../blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
@@ -39,11 +39,7 @@ console.log(posts[0].frontmatter);
         posts &&
           posts.map((post) => (
             // console.log(post);
-            <Blogtemplate
-              title={post.title}
-              heroImage={post.heroImage}
-              description={post.description}
-            />
+            <Blogtemplate />
           ))
       }
     </div>
