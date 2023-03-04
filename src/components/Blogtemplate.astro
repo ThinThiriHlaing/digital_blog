@@ -1,0 +1,21 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+const { img_url, title, paragraph, pubDate } = Astro.props;
+---
+
+<div class="flex flex-col basis-[33%] gap-5 items-start">
+  <img src={img_url} alt="" srcset="" />;
+  <p
+    class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
+  >
+    {title}
+  </p>
+  <FormattedDate date={pubDate} />
+  <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">{paragraph}</p>
+  <button
+    class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
+  >
+    Read more
+  </button>
+</div>

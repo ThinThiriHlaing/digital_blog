@@ -1,0 +1,27 @@
+/* The integration's default injected base.css file */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "YAMIN A 001";
+  src: url("../font/YAMIN A 001.ttf") format("ttf");
+}
+@font-face {
+  font-family: "W49Art";
+  src: url("../font/W49Art.ttf") format("ttf");
+}
+
+.eng-txt {
+  font-family: "Manrope", "Times New Roman", Times, serif;
+}
+
+.mm-txt {
+  font-family: "YAMIN A 001";
+}
+
+section {
+  margin: 135px 0 0 0;
+}
