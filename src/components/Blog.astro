@@ -3,7 +3,7 @@ import Blogtemplate from "./Blogtemplate.astro";
 import image1 from "../assets/dsfasdfs.webp";
 import image2 from "../assets/programmer-wallpaper.webp";
 
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+const posts = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
