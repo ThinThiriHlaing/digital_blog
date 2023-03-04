@@ -1,11 +1,11 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
 
-const { img_url, title, paragraph, pubDate } = Astro.props;
+const { heroImage, title, paragraph, pubDate } = Astro.props;
 ---
 
 <div class="flex flex-col basis-[32.5%] gap-5 items-start">
-  <img src={img_url} alt="" srcset="" />;
+  <img src={heroImage} alt="" srcset="" />;
   <p
     class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
   >
