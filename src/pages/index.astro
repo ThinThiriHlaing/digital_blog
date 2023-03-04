@@ -4,19 +4,9 @@ import Blogtitle from "../components/Blogtitle.astro";
 import Blogtemplate from "../components/Blogtemplate.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "../layouts/Layout.astro";
-
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
-);
-
-console.log(posts[0].frontmatter);
 ---
 
 <Layout title="This is Digital Zeekwet WebPage!">
   <Blogtitle />
   <Blog />
-
-  {posts && posts.map((post) => <Blogtemplate />)}
 </Layout>
