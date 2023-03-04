@@ -2,6 +2,7 @@
 import Blogtemplate from "./Blogtemplate.astro";
 import image1 from "../assets/dsfasdfs.webp";
 import image2 from "../assets/programmer-wallpaper.webp";
+import FormattedDate from "./FormattedDate.astro";
 // import Blogtitle from "./Blogtitle.astro";
 
 const posts = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
@@ -42,7 +43,9 @@ console.log(posts[0].frontmatter);
               title={post.title}
               heroImage={post.heroImage}
               description={post.description}
-            />
+            >
+              <FormattedDate date={post.frontmatter.pubDate} />
+            </Blogtemplate>
           ))
       }
     </div>
