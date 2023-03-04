@@ -2,6 +2,7 @@
 import Blogtemplate from "./Blogtemplate.astro";
 import image1 from "../assets/dsfasdfs.webp";
 import image2 from "../assets/programmer-wallpaper.webp";
+import Blogtitle from "./Blogtitle.astro";
 
 const posts = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
   (a, b) =>
@@ -14,7 +15,7 @@ console.log(posts[0].frontmatter);
 
 <section>
   <div>
-    <!-- <Blogtitle /> -->
+    <Blogtitle />
     <div
       class="flex flex-col flex-wrap mx-[48px] lg:flex-row gap-12 lg:gap-[17px] pt-16 lg:mx-[72px]"
     >
@@ -35,13 +36,15 @@ console.log(posts[0].frontmatter);
       />
       {
         posts &&
-          posts.map((post) => (
-            <Blogtemplate
-              title={post.title}
-              heroImage={post.heroImage}
-              description={post.description}
-            />
-          ))
+          posts.map((post) => {
+            console.log(post);
+
+            // <Blogtemplate
+            //   title={post.title}
+            //   heroImage={post.heroImage}
+            //   description={post.description}
+            // />
+          })
       }
     </div>
   </div>
