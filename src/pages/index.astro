@@ -1,6 +1,7 @@
 ---
 import Blog from "../components/Blog.astro";
-import Blogtemplate from "../components/Blogtemplate.astro";
+import Blogtitle from "../components/Blogtitle.astro";
+// import Blogtemplate from "../components/Blogtemplate.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -14,15 +15,16 @@ console.log(posts[0].frontmatter);
 ---
 
 <Layout title="This is Digital Zeekwet WebPage!">
+  <Blogtitle />
   <Blog />
 
   {
     posts &&
       posts.map((post) => (
-        <Blogtemplate>
+        <Blog>
           <FormattedDate date={post.frontmatter.pubDate} />
           <a href={`${post.url}`}>{post.frontmatter.title}</a>
-        </Blogtemplate>
+        </Blog>
       ))
   }
 </Layout>
