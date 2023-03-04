@@ -36,15 +36,14 @@ console.log(posts[0].frontmatter);
       />
       {
         posts &&
-          posts.map((post) => {
-            console.log(post);
-
+          posts.map((post) => (
+            // console.log(post);
             <Blogtemplate
               title={post.title}
               heroImage={post.heroImage}
               description={post.description}
-            />;
-          })
+            />
+          ))
       }
     </div>
   </div>
