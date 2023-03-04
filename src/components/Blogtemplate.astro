@@ -1,5 +1,5 @@
 ---
-import FormattedDate from "./FormattedDate.astro";
+// import FormattedDate from "./FormattedDate.astro";
 
 const { img_url, title, paragraph, pubDate } = Astro.props;
 ---
@@ -11,7 +11,7 @@ const { img_url, title, paragraph, pubDate } = Astro.props;
   >
     {title}
   </p>
-  <FormattedDate date={pubDate} />
+  <!-- <FormattedDate date={pubDate} /> -->
   <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">{paragraph}</p>
   <button
     class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
