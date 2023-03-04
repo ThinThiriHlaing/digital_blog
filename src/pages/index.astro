@@ -18,13 +18,5 @@ console.log(posts[0].frontmatter);
   <Blogtitle />
   <Blog />
 
-  {
-    posts &&
-      posts.map((post) => (
-        <Blogtemplate>
-          <FormattedDate date={post.frontmatter.pubDate} />
-          <a href={`${post.url}`}>{post.frontmatter.title}</a>
-        </Blogtemplate>
-      ))
-  }
+  {posts && posts.map((post) => <Blogtemplate />)}
 </Layout>
