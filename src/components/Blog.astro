@@ -11,7 +11,7 @@ const blog = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
     new Date(a.frontmatter.pubDate).valueOf()
 );
 
-// console.log(blog);
+console.log(blog);
 ---
 
 <section>
@@ -35,16 +35,7 @@ const blog = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
         title={"မြိတ်က အွန်လိုင်းသုံးစွဲသူတွေရဲ့ အကြိုက်က ဘာဖြစ်မလဲ?"}
         description={"မြိတ်မြို့မှာလုပ်ကိုင်ကြတဲ့ စီးပွားရေး လုပ်ငန်းတွေဟာ Online Marketing ရဲ့ အဓိက အရေးကြီးဆုံး အပိုင်းဖြစ်တဲ့ ကြော်ငြာစာအရေးအသားမှာ အားနည်းတာ၊ အချိန်မပေးနိုင်တာကို တွေ့ရပါတယ်။"}
       />
-      {
-        blog &&
-          blog.map((post) => (
-            <Blogtemplate
-              img={post.img}
-              title={post.title}
-              description={post.description}
-            />
-          ))
-      }
+      {blog && blog.map((post) => <Blogtemplate post={post} />)}
     </div>
   </div>
 </section>
