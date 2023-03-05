@@ -37,14 +37,13 @@ const blog = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
       />
       {
         blog &&
-          blog.map(
-            (post) => console.log(post)
-            // <Blogtemplate
-            //   img={post.img}
-            //   title={post.title}
-            //   description={post.description}
-            // />
-          )
+          blog.map((post) => (
+            <Blogtemplate
+              img={post.img}
+              title={post.title}
+              description={post.description}
+            />
+          ))
       }
     </div>
   </div>
