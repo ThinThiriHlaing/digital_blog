@@ -5,13 +5,13 @@ import image2 from "../assets/programmer-wallpaper.webp";
 // import FormattedDate from "./FormattedDate.astro";
 // import Blogtitle from "./Blogtitle.astro";
 
-const posts = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
+const blog = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
 );
 
-console.log(posts[0].frontmatter);
+console.log(blog[0].frontmatter);
 ---
 
 <section>
@@ -36,8 +36,8 @@ console.log(posts[0].frontmatter);
         description={"မြိတ်မြို့မှာလုပ်ကိုင်ကြတဲ့ စီးပွားရေး လုပ်ငန်းတွေဟာ Online Marketing ရဲ့ အဓိက အရေးကြီးဆုံး အပိုင်းဖြစ်တဲ့ ကြော်ငြာစာအရေးအသားမှာ အားနည်းတာ၊ အချိန်မပေးနိုင်တာကို တွေ့ရပါတယ်။"}
       />
       {
-        posts &&
-          posts.map((post) => (
+        blog &&
+          blog.map((post) => (
             // console.log(post);
             <Blogtemplate
               img={post.img}
