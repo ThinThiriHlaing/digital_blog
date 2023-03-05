@@ -39,7 +39,11 @@ console.log(posts[0].frontmatter);
         posts &&
           posts.map((post) => (
             // console.log(post);
-            <Blogtemplate post={post.Blogtemplate} />
+            <Blogtemplate
+              img={post.img}
+              title={post.title}
+              description={post.description}
+            />
           ))
       }
     </div>
