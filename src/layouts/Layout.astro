@@ -1,6 +1,5 @@
 ---
 import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 import "../styles/style.css";
 
@@ -8,7 +7,7 @@ export interface Props {
   title: string;
 }
 
-const { title, description, pubDate, updatedDate, img } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -32,23 +31,6 @@ const { title, description, pubDate, updatedDate, img } = Astro.props;
   </head>
   <body>
     <Header />
-    <img src={img} alt="" srcset="" />
-    <h3
-      class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
-    >
-      {title}
-    </h3>
-    <FormattedDate date={pubDate} />
-    {
-      updatedDate && (
-        <div class="last-updated-on">
-          Last updated on <FormattedDate date={updatedDate} />
-        </div>
-      )
-    }
-    <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">
-      {description}
-    </p>
     <slot />
     <Footer />
     <script>

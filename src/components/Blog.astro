@@ -11,7 +11,7 @@ const blog = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
     new Date(a.frontmatter.pubDate).valueOf()
 );
 
-console.log(blog[0].frontmatter);
+// console.log(blog);
 ---
 
 <section>
@@ -37,14 +37,14 @@ console.log(blog[0].frontmatter);
       />
       {
         blog &&
-          blog.map((post) => (
-            // console.log(post);
-            <Blogtemplate
-              img={post.img}
-              title={post.title}
-              description={post.description}
-            />
-          ))
+          blog.map(
+            (post) => console.log(post)
+            // <Blogtemplate
+            //   img={post.img}
+            //   title={post.title}
+            //   description={post.description}
+            // />
+          )
       }
     </div>
   </div>
