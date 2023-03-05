@@ -5,7 +5,13 @@ import image2 from "../assets/programmer-wallpaper.webp";
 // import FormattedDate from "./FormattedDate.astro";
 // import Blogtitle from "./Blogtitle.astro";
 
-const { posts } = Astro.props;
+const posts = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+
+console.log(posts[0].frontmatter);
 ---
 
 <section>

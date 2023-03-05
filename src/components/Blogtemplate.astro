@@ -1,14 +1,6 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
 
-const posts = (await Astro.glob("../pages/blog/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
-);
-
-console.log(posts[0].frontmatter);
-
 const { img, title, description, pubDate, updatedDate } = Astro.props;
 console.log(Astro.props.title);
 ---
