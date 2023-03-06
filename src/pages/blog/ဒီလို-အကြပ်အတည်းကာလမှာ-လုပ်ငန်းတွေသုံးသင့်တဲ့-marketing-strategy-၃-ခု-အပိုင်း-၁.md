@@ -1,6 +1,6 @@
 ---
 layout: ../../components/Blogtemplate.astro
-img: /assets/dsfasdfs.webp
+img: /dsfasdfs.webp
 pubDate: 2023-03-06T06:14:46.541Z
 title: ဒီလို အကြပ်အတည်းကာလမှာ လုပ်ငန်းတွေသုံးသင့်တဲ့ Marketing Strategy ၃ ခု
   အပိုင်း(၁)
@@ -9,4 +9,5 @@ description: မီတာစျေးတွေတက်လာတယ်၊ အင
   ကိုယ့်နဲ့အတူလုပ်ကိုင်နေတဲ့ ဝန်ထမ်း၊ မိသားစုအတွက် ရသမျှနည်းလမ်းအကုန်နဲ့ထောင့်ခံ
   ရုန်းကန်နေရဦးမှာပါ
 ---
+
 s﻿ds
