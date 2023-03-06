@@ -4,11 +4,11 @@ console.log(post);
 ---
 
 <div class="flex flex-col basis-[32.5%] gap-5 items-start">
-  <img src={post.frontmatter.img} alt="" srcset="" />
+  <img src={post.img} alt="" srcset="" />
   <h3
     class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
   >
-    {post.frontmatter.title}
+    {post.title}
   </h3>
   <!-- <FormattedDate date={pubDate} /> -->
 
@@ -20,7 +20,7 @@ console.log(post);
     )
   } -->
   <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">
-    {post.frontmatter.description}
+    {post.description}
   </p>
   <button
     class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
