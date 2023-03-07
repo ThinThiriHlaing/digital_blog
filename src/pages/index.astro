@@ -42,13 +42,7 @@ console.log("Thin");
         <div
           class="flex flex-col flex-wrap mx-[48px] lg:flex-row gap-12 lg:gap-[17px] pt-16 lg:mx-[72px]"
         >
-          {
-            blog &&
-              blog.map((post) => (
-                //  console.log(post.frontmatter.title)
-                <Blogtemplate post={post.frontmatter} />
-              ))
-          }
+          {blog && blog.map((post) => <Blogtemplate post={post.frontmatter} />)}
         </div>
       </div>
     </section>
