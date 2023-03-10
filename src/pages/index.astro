@@ -34,18 +34,26 @@ console.log("Thin");
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     ></script>
   </head>
-  <body class="bg-[#02020b] container p-0">
+  <body class="bg-[#02020b] overflow-x-hidden container-fluid">
     <Header />
-    <section>
-      <div>
-        <Blogtitle />
-        <div
-          class="flex flex-col flex-wrap mx-[48px] lg:flex-row gap-12 lg:gap-[17px] pt-16 lg:mx-[72px]"
-        >
-          {blog && blog.map((post) => <Blogtemplate post={post.frontmatter} />)}
+    <main>
+      <section>
+        <div class="container-fluid mx-auto px-[48px] md:px-[60px] lg:px-20">
+          <div>
+            <Blogtitle />
+
+            <div
+              class="gap-y-8 flex felx-col flex-wrap gy-8 lg:flex-row py-16 border-solid border-[#767A81] lg:gap-y-10"
+            >
+              {
+                blog &&
+                  blog.map((post) => <Blogtemplate post={post.frontmatter} />)
+              }
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <Footer />
 
     <script>

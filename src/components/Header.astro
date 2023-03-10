@@ -2,60 +2,63 @@
 import img from "../assets/EIT.logo.png";
 ---
 
-<header class="bg-[#02020B] w-[100vw] z-10 fixed top-0 py-[15px] md:py-[34px]">
-  <div class="mx-[28px] md:mx-[40px] flex justify-between items-center">
+<header class="bg-[#02020B] w-[100vw] z-10 fixed top-0 py-[15px]">
+  <div
+    class="mx-[24px] sm:mx-[48px] lg:mx-[72px] flex justify-between items-center"
+  >
     <div class="flex items-center gap-[0.5rem]">
       <img class="w-[52px] md:w-[73px]" src={img} alt="" />
-      <div class="font-semibold text-[1rem] leading-[19px] md:text-[24px]">
+      <div class="font-semibold text-[1rem] leading-[19px] md:text-2xl">
         <p class="eng-txt text-[#EFF1F4]">Digital</p>
         <p class="eng-txt text-[#FACB39]">ZeeKwet</p>
       </div>
     </div>
-
     <div>
       <ul
         class="inline-flex items-center gap-10 list-none text-[#E6E6E6] max-[960px]:w-[200px] max-[960px]:h-[400px] max-[960px]:bg-orange-200 max-[960px]:block max-[960px]:right-[-5px] max-[960px]:absolute top-[-500px] max-[960px]:transition-all max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:duration-500"
       >
         <li
-          class="max-[960px]:text-center max-[960px]:mt-5 font-[500] text-[18px] eng-txt"
+          class="max-[960px]:text-center max-[960px]:mt-5 md:text-lg font-[500] text-[18px] eng-txt"
         >
-          <a href="">Home</a>
+          <a href="/#home" class="false">Home</a>
         </li>
         <li
-          class="max-[960px]:text-center max-[960px]:mt-5 font-[500] text-[18px] eng-txt"
+          class="max-[960px]:text-center max-[960px]:mt-5 md:text-lg font-[500] text-[18px] eng-txt"
         >
-          <a href="">Services</a>
+          <a href="/#services" class="false">Services</a>
         </li>
         <li
-          class="max-[960px]:text-center max-[960px]:mt-5 font-[500] text-[18px] eng-txt"
+          class="max-[960px]:text-center max-[960px]:mt-5 md:text-lg font-[500] text-[18px] eng-txt"
         >
-          <a href="">About</a>
+          <a href="/#about" class="false">About</a>
         </li>
         <li
-          class="max-[960px]:text-center max-[960px]:mt-5 font-[500] text-[18px] eng-txt"
+          class="max-[960px]:text-center max-[960px]:mt-5 md:text-lg font-[500] text-[18px] eng-txt"
         >
-          <a href="">Projects</a>
+          <a href="/#projects" class="false">Projects</a>
         </li>
         <li
-          class="max-[960px]:text-center max-[960px]:mt-5 font-[500] text-[18px] eng-txt"
+          class="max-[960px]:text-center max-[960px]:mt-5 md:text-lg font-[500] text-[18px] eng-txt"
         >
-          <a href="">Blog</a>
+          <a href="/blog" class="NavLink_active__v2tk7">Blog</a>
         </li>
-
-        <div class="felx text-center">
-          <button
-            class="eng-txt text-[#000000] font-[700] px-2 py-3 rounded-xl bg-[#fac211] text-[15px]"
+        <div class="flex text-center">
+          <a href="https://m.me/digitalzeekwet"
+            ><button
+              class="eng-txt text-[#000000] font-[700] rounded-xl bg-[#fac211] text-base text-[15px] px-[14.5px] py-[10px]"
+            >
+              GET IN TOUCH
+            </button></a
           >
-            GET IN TOUCH
-          </button>
         </div>
       </ul>
-      <label class="text-[24px] text-[#E6E6E6] min-[961px]:hidden">
-        <button id="btn-menu" class="close mr-3">
-          <i class="fa-solid fa-bars" id="open"></i>
-          <i class="fa-solid fa-xmark max-[961px]:hidden" id="close"></i>
-        </button>
-      </label>
+      <label class="text-2xl text-[#E6E6E6] min-[961px]:hidden"
+        ><button id="btn-menu" class="close mr-3">
+          <i class="fa-solid fa-bars" id="open"></i><i
+            class="fa-solid fa-xmark max-[961px]:hidden"
+            id="close"></i></button
+        ></label
+      >
     </div>
   </div>
 </header>
