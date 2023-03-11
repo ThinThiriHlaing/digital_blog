@@ -1,6 +1,6 @@
 ---
 const { post } = Astro.props;
-console.log(post);
+console.log(post.url);
 ---
 
 <div class="flex flex-col basis-[33.33%] gap-5 px-2">
@@ -17,10 +17,11 @@ console.log(post);
     {post.paragraph}
   </p>
   <div>
-    <button
-      class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
+    <a href={`${post.url}`}>
+      <button
+        class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
+        >Read more
+      </button></a
     >
-      Read more
-    </button>
   </div>
 </div>
