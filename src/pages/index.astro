@@ -17,7 +17,7 @@ const blog = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 console.log(blog);
 
 console.log(blog[0].frontmatter.title);
-console.log("Thin");
+// console.log("Thin");
 ---
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ console.log("Thin");
               {
                 blog &&
                   blog.map(
-                    (post) => <Blogtemplate post={post.frontmatter} />
+                    (post) => <Blogtemplate post={post} />
                     // console.log("Mee Ywat");
 
                     // console.log(post.url);

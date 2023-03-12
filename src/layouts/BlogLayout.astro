@@ -3,13 +3,21 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/style.css"
+import tailwind from "@astrojs/tailwind";
 
-const { title, description, paragraph } = Astro.props;
+// const { title, description, paragraph } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+  />
 
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,123 +26,10 @@ const { title, description, paragraph } = Astro.props;
 
   <body>
     <Header />
-    <div class="flex flex-col gap-[64px]">
-      <div class="w-full h-full mt-0 md:mt-[40px]">
-        <img
-          src="/assets/image/Hero-BlogDetail.png"
-          alt="Blog-Details"
-          class="w-full h-full"
-        />
-      </div>
-      <div
-        class="flex flex-col gap-[32px] md:gap-[64px] mx-[48px] lg:mx-[72px]"
-      >
-        <div>
-          <h1
-            class="text-[#FAC211] text-[19px] md:text-[30px] xl:text-[40px] font-[700] leading-[40px] md:leading-[62px] tracking-[-0.022em] mm-txt"
-          >
-            {description}
-          </h1>
-        </div>
-        <div
-          class="flex flex-col lg:flex-row gap-[50px] lg:gap-[64px] w-full h-full"
-        >
-          <div class="flex flex-col gap-[24px] w-full lg:w-[50%] h-full">
-            <div class="flex gap-[20px]">
-              <div
-                class="border-[#0D99FF] border-solid border-l-[4px] h-auto min-[1082px]:h-[150px]"
-              >
-              </div>
-              <div
-                class="text-[#C5CAD0] text-[15px] md:text-[20px] font-[700] items-center tracking-[-0.02em] leading-[31.15px] mm-txt"
-              >
-                <p>
-                  ၂ မိနစ်တည်းနဲ့ သင့်လုပ်ငန်းအကြောင်း
-                  အသေးစိတ်ပြောပြနိုင်မယ်ဆိုရင် အချက်အလက်ကို လိုချင်တဲ့နေရာ၊
-                  လိုချင်တဲ့အချိန်မှာ ရယူချင်လာတဲ့ Digital ခေတ်မှာ
-                  လုပ်ငန်းတွေရဲ့ အဓိက စိန်ခေါ်မှုဟာ လိုချင်တဲ့ အချက်အလက်ကို
-                  အမြန်ဆုံးပေးနိုင်ခြင်းပဲဖြစ်ပါတယ်။
-                </p>
-              </div>
-            </div>
-            <div
-              class="flex flex-col min-[425px]:flex-row gap-[15px] md:gap-[24px] items-center"
-            >
-              <div
-                class="text-[#D9D9D9] text-[16px] min-[425px]:text-[14px] md:text-[16px] font-[500] leading-[22px] eng-txt"
-              >
-                <span>Share on social media :</span>
-              </div>
-              <div class="flex gap-4">
-                <div>
-                  <i
-                    class="fa-brands fa-square-facebook text-[#FFFFFF] flex justify-center items-center w-[40px] h-[40px] rounded-full bg-[#2563EB]"
-                  ></i>
-                </div>
-                <div>
-                  <i
-                    class="fa-brands fa-youtube text-[#FFFFFF] flex justify-center items-center w-[40px] h-[40px] rounded-lg bg-[#FF0000]"
-                  ></i>
-                </div>
-                <div>
-                  <i
-                    class="fa-brands fa-linkedin flex justify-center items-center w-[40px] h-[40px] rounded-lg bg-[#0A66C2]"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full lg:w-[50%] h-full flex flex-col gap-[32px]">
-            <div>
-              <p
-                class="text-[16px] font-[400] text-[#8D949E] tracking-[-0.02em] leading-[25px] mm-txt"
-              >
-                လုပ်ငန်းရဲ့ ဝန်ဆောင်မှုနဲ့ စျေးနှုန်း Package တွေ၊ ဆက်သွယ်ရမယ့်
-                လိပ်စာဖုန်းနံပါတ်တွေထည့်ထားခြင်းက Website ကနေလေ့လာပြီး
-                တိုက်ရိုက်ဆက်သွယ်နိုင်သလို ကိုယ့်ဝန်ဆောင်မှုကို အသုံးပြုသူတွေရဲ့
-                အမှတ်တရတွေ၊ စကားသံတွေဟာ customer အသစ်တွေကို ဆွဲဆောင်နိုင်တဲ့
-                Powerful Proof ဖြစ်ပါတယ်။ပြီးတော့ မြိတ်မြို့ ဟာ ကျွန်းတွေကြောင့်
-                ခရီးသွားတွေကြားမှာ နာမည်ရတဲ့မြို့ဖြစ်ပြီး လုပ်ငန်းအများစုဟာ
-                ခရီးသွားတွေကို အဓိကဝန်ဆောင်မှုပေးတဲ့ လုပ်ငန်းအများစု
-                ရှိတဲ့မြို့ဖြစ်ပါတယ်။ ဒါပေမယ့် ဝန်ဆောင်မှုတွေဟာ
-                ထိတွေ့ကိုင်တွယ်လို့မရတာ (Intangible)ကြောင့်
-                ဝန်ဆောင်မှုလုပ်ငန်းတွေဟာ အသုံးပြုမယ့်သူတွေ ထိတွေ့ကိုင်တွယ်
-                ခံစားကြည့်လို့ရမယ့် နည်းတွေကိုဖန်တီးထားသင့်ပါတယ်။ဒါကတော့ ၁.၅
-                မိနစ်တည်းနဲ့ သင့်လုပ်ငန်းအကြောင်း ၂၄ နာရီ ၇ ရက်
-                အသေးစိတ်ပြောပြနိုင်မယ့် Website ပဲဖြစ်ပါတယ်။ဒီ Content မှာတော့
-                မြိတ်မြို့ ရဲ့ လုပ်ငန်းအချို့နဲ့ ကိုက်ညီမယ့် Website (၅) ခုကို
-                ပြောပြချင်ပါတယ်။
-              </p>
-            </div>
-            <div>
-              <p
-                class="text-[16px] font-[400] text-[#8D949E] tracking-[-0.02em] leading-[25px] mm-txt"
-              >
-                ဒါပေမယ့် ဝန်ဆောင်မှုတွေဟာ ထိတွေ့ကိုင်တွယ်လို့မရတာ
-                (Intangible)ကြောင့် ဝန်ဆောင်မှုလုပ်ငန်းတွေဟာ အသုံးပြုမယ့်သူတွေ
-                ထိတွေ့ကိုင်တွယ် ခံစားကြည့်လို့ရမယ့်
-                နည်းတွေကိုဖန်တီးထားသင့်ပါတယ်။ ဒါကတော့ ၁.၅ မိနစ်တည်းနဲ့
-                သင့်လုပ်ငန်းအကြောင်း ၂၄ နာရီ ၇ ရက် အသေးစိတ်ပြောပြနိုင်မယ့်
-                Website ပဲဖြစ်ပါတယ်။ဒီ Content မှာတော့ မြိတ်မြို့ ရဲ့
-                လုပ်ငန်းအချို့နဲ့ ကိုက်ညီမယ့် Website (၅) ခုကို ပြောပြချင်ပါတယ်။
-              </p>
-            </div>
-            <div>
-              <p
-                class="text-[16px] font-[400] text-[#8D949E] tracking-[-0.02em] leading-[25px] mm-txt"
-              >
-                ခရီးသွားရင် ပထမဆုံး မရှိမဖြစ် လုပ်ကြတာက သွားမယ့်ခရီးကို
-                ခံစားကြည့်တာပါ။ ဒီအချိန်မှာ Hotel တွေရဲ့ ကိုယ်ပိုင် Website မှာ
-                ခင်းကျင်းပြသထားတဲ့ မြင်ကွင်းတွေဟာ ခရီးသွားမယ့်သူရဲ့ Feeling ကို
-                တိုးမြှင့်ပေးနိုင်သလို Booking ပါတစ်ခါတည်းလုပ်လို့ရတဲ့ Website
-                ဆိုရင်တော့ ဝန်ဆောင်မှု ကို အသုံးပြုသူတွေပါတိုးစေနိုင်ပါတယ်။
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- <h1 class="text-red-800">Thin Thiri Hlaing</h1> -->
     <slot />
-    <Footer />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- <Footer /> -->
   </body>
 </html>
