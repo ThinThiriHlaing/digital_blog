@@ -3,7 +3,6 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import "../styles/style.css";
 
 // console.log("Thin");
 ---
@@ -18,29 +17,13 @@ import "../styles/style.css";
       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../styles/style.css" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     ></script>
   </head>
   <body class="bg-[#02020b] overflow-x-hidden container-fluid">
     <Header />
-    <slot />
+    <!-- <slot /> -->
     <Footer />
-
-    <script>
-      declare global {
-        interface Window {
-          netlifyIdentity: any;
-        }
-      }
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user: any) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>

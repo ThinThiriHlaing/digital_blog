@@ -1,13 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import image1 from "../assets/dsfasdfs.webp";
-import image2 from "../assets/programmer-wallpaper.webp";
-import Blogtitle from "../components/Blogtitle.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import "../styles/style.css";
 import Blogtemplate from "../components/Blogtemplate.astro";
+import Blogtitle from "../components/Blogtitle.astro";
+import BlogLayout from "../layouts/BlogLayout.astro";
 
 const blog = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
@@ -17,65 +11,30 @@ const blog = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 console.log(blog);
 
 console.log(blog[0].frontmatter.title);
-// console.log("Thin");
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
-  </head>
-  <body class="bg-[#02020b] overflow-x-hidden container-fluid">
-    <Header />
-    <main>
-      <section>
-        <div class="container-fluid mx-auto px-[48px] md:px-[60px] lg:px-20">
-          <div>
-            <Blogtitle />
+<BlogLayout>
+  <main>
+    <section>
+      <div class="container-fluid mx-auto px-[48px] md:px-[60px] lg:px-20">
+        <div>
+          <Blogtitle />
 
-            <div
-              class="gap-y-8 flex felx-col flex-wrap gy-8 lg:flex-row py-16 border-solid border-[#767A81] lg:gap-y-10"
-            >
-              {
-                blog &&
-                  blog.map(
-                    (post) => <Blogtemplate post={post} />
-                    // console.log("Mee Ywat");
+          <div
+            class="gap-y-8 flex felx-col flex-wrap gy-8 lg:flex-row py-16 border-solid border-[#767A81] lg:gap-y-10"
+          >
+            {
+              blog &&
+                blog.map(
+                  (post) => <Blogtemplate post={post} />
+                  // console.log("Mee Ywat");
 
-                    // console.log(post.url);
-                  )
-              }
-            </div>
+                  // console.log(post.url);
+                )
+            }
           </div>
         </div>
-      </section>
-    </main>
-    <Footer />
-
-    <script>
-      declare global {
-        interface Window {
-          netlifyIdentity: any;
-        }
-      }
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user: any) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
-  </body>
-</html>
+      </div>
+    </section>
+  </main>
+</BlogLayout>

@@ -8,7 +8,7 @@ paragraph: " ၂ မိနစ်တည်းနဲ့ သင့်လုပ်�
   လုပ်ငန်းတွေရဲ့ အဓိက စိန်ခေါ်မှုဟာ လိုချင်တဲ့ အချက်အလက်ကို
   အမြန်ဆုံးပေးနိုင်ခြင်းပဲဖြစ်ပါတယ်။"
 
-layout: ../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogPostDetail.astro
 ---
 
 I﻿t's works!

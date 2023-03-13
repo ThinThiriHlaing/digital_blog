@@ -7,7 +7,7 @@ paragraph: မြိတ်မြို့မှာလုပ်ကိုင်က
   ရဲ့ အဓိက အရေးကြီးဆုံး အပိုင်းဖြစ်တဲ့ ကြော်ငြာစာအရေးအသားမှာ အားနည်းတာ၊
   အချိန်မပေးနိုင်တာကို တွေ့ရပါတယ်။
 
-layout: ../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogPostDetail.astro
 ---
 
 I﻿t's work!

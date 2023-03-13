@@ -9,7 +9,7 @@ paragraph: " မီတာစျေးတွေတက်လာတယ်၊ အင
   ကိုယ့်နဲ့အတူလုပ်ကိုင်နေတဲ့ ဝန်ထမ်း၊ မိသားစုအတွက် ရသမျှနည်းလမ်းအကုန်နဲ့ထောင့်ခံ
   ရုန်းကန်နေရဦးမှာပါ"
 
-layout: ../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogPostDetail.astro
 ---
 
 I﻿t's works!
