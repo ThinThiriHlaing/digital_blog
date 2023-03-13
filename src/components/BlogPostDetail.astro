@@ -1,0 +1,92 @@
+---
+const { img, description, paragraph } = Astro.props;
+console.log("Ywat");
+
+console.log(Astro.props);
+---
+
+<section>
+  <main class="Hero">
+    <div>
+      <div class="flex flex-col gap-[64px]">
+        <div class="w-full h-full mt-0 md:mt-[40px]">
+          <img
+            alt="Blog-Details"
+            src={img}
+            width="1600"
+            height="901"
+            decoding="async"
+            data-nimg="1"
+            class="mx-auto"
+            loading="lazy"
+            style="color:transparent"
+          />
+        </div><div
+          class="flex flex-col gap-[32px] md:gap-[64px] mx-[48px] lg:mx-[72px]"
+        >
+          <div>
+            <h1
+              class="text-[#FAC211] text-[19px] md:text-[30px] xl:text-[40px] font-[700] leading-[40px] md:leading-[62px] tracking-[-0.022em] mm-txt"
+            >
+              {description}
+            </h1>
+          </div><div
+            class="flex flex-col lg:flex-row gap-[50px] lg:gap-[64px] w-full h-full"
+          >
+            <div
+              class="flex flex-col gap-[24px] w-full lg:w-[50%] h-full lg:sticky lg:top-[110px]"
+            >
+              <div class="flex gap-[20px]">
+                <div
+                  class="border-[#0D99FF] border-solid border-l-[4px] h-auto min-[1082px]:h-[150px]"
+                >
+                </div><div
+                  class="text-[#C5CAD0] text-[15px] md:text-[20px] font-[700] items-center tracking-[-0.02em] leading-[31.15px] mm-txt"
+                >
+                  <p>
+                    {paragraph}
+                  </p>
+                </div>
+              </div><div
+                class="flex flex-col min-[425px]:flex-row gap-[15px] md:gap-[24px] items-center"
+              >
+                <div
+                  class="text-[#D9D9D9] text-[16px] min-[425px]:text-[14px] md:text-[16px] font-[500] leading-[22px] eng-txt"
+                >
+                  <span>Share on social media :</span>
+                </div><div class="flex gap-4">
+                  <div>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      font-size="38"
+                      color="#2563EB"
+                      class="hover:contrast-50 cursor-pointer"
+                      style="color:#2563EB"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                      ><path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                      ></path></svg
+                    >
+                  </div>
+                </div>
+              </div>
+            </div><div
+              class="w-full lg:w-[50%] h-full flex flex-col gap-[32px]"
+            >
+              <div
+                class="text-[16px] font-[400] text-[#8D949E] tracking-[-0.02em] leading-[25px] mm-txt long_content"
+              >
+                <p><slot /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

@@ -2,9 +2,14 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BlogPostDetail from "../components/BlogPostDetail.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-// console.log("Thin");
+const { content } = Astro.props;
+const { img, description, paragraph } = content;
+
+console.log("Thin");
+console.log(Astro.props);
 ---
 
 <!DOCTYPE html>
@@ -23,7 +28,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body class="bg-[#02020b] overflow-x-hidden container-fluid">
     <Header />
-    <!-- <slot /> -->
+    <BlogPostDetail {img} {description} {paragraph}>
+      <slot />
+    </BlogPostDetail>
     <Footer />
   </body>
 </html>
