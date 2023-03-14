@@ -10,8 +10,20 @@ import Blogtemplate from "../components/Blogtemplate.astro";
 const { content } = Astro.props;
 const { img, description, paragraph } = content;
 
-console.log("Thin");
-console.log(Astro.props);
+// console.log("Thin");
+// console.log(Astro.props);
+
+const blog = await Astro.glob("../pages/blog/*.{md,mdx}");
+console.log(blog);
+console.log("ma ma");
+
+const filter = () => {
+  const filterBlog = blog.filter(
+    (blogs) => blogs.frontmatter.id == blogs.frontmatter.id
+  );
+  return filterBlog;
+};
+filter();
 ---
 
 <!DOCTYPE html>
@@ -33,7 +45,13 @@ console.log(Astro.props);
     <BlogPostDetail {img} {description} {paragraph}>
       <slot />
     </BlogPostDetail>
-
+    <!-- {
+      blog &&
+        blog.filter((blog) => blog.frontmatter.id == id
+          // console.log(blog.frontmatter.id);
+          // console.log("mg mag");
+        )
+    } -->
     <Footer />
   </body>
 </html>
