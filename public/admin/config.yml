@@ -27,4 +27,11 @@ collections:
       - { label: "Paragraph", name: "paragraph", widget: "string" }
       # - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "ID", name: "id", widget: "number" }
+      - {
+          label: ID,
+          name: id,
+          widget: ncw-id,
+          prefix: post,
+          timestamp: true,
+          hint: This widget generate an unique read-only id,
+        }
