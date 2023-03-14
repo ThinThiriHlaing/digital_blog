@@ -4,6 +4,8 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BlogPostDetail from "../components/BlogPostDetail.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/style.css";
+import Blogtemplate from "../components/Blogtemplate.astro";
 
 const { content } = Astro.props;
 const { img, description, paragraph } = content;
@@ -31,6 +33,7 @@ console.log(Astro.props);
     <BlogPostDetail {img} {description} {paragraph}>
       <slot />
     </BlogPostDetail>
+
     <Footer />
   </body>
 </html>
