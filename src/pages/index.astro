@@ -26,7 +26,14 @@ console.log(blog[0].frontmatter.title);
             {
               blog &&
                 blog.map(
-                  (post) => <Blogtemplate post={post} />
+                  (post) => (
+                    <Blogtemplate
+                      img={post.frontmatter.img}
+                      description={post.frontmatter.description}
+                      paragraph={post.frontmatter.paragraph}
+                      url={post.url}
+                    />
+                  )
                   // console.log("Mee Ywat");
 
                   // console.log(post.url);

@@ -1,24 +1,24 @@
 ---
-const { post } = Astro.props;
+const { img, description, paragraph, url } = Astro.props;
 
-console.log(post.url);
+// console.log(post.url);
 ---
 
 <div class="flex flex-col basis-[33.33%] gap-5 px-2">
   <div>
-    <img src={post.frontmatter.img} alt="" srcset="" />
+    <img src={img} alt="" srcset="" />
   </div>
   <h3
     class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
   >
-    {post.frontmatter.description}
+    {description}
   </h3>
 
   <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">
-    {post.frontmatter.paragraph}
+    {paragraph}
   </p>
   <div>
-    <a href={post.url}>
+    <a href={url}>
       <button
         class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
         >Read more

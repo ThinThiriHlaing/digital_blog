@@ -1,24 +1,40 @@
 ---
+import Blogtemplate from "./Blogtemplate.astro";
+
+const { id } = Astro.props;
+const blog = await Astro.glob("../pages/blog/*.{md,mdx}");
+const filterBlog = blog.filter((post) => post.frontmatter.id !== id);
+console.log(blog);
+
+console.log(filterBlog);
+console.log("ma ma");
 ---
 
 <section>
-  <div class="flex flex-col basis-[33.33%] gap-5 px-2">
-    <div>
-      <img src='alt=""' srcset="" />
-    </div>
-    <h3
-      class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
-    >
-    </h3>
-
-    <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]"></p>
-    <div>
-      <a href="">
-        <button
-          class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
-          >Read more
-        </button></a
-      >
+  <div class="container-fluid px-[48px] lg:px-[72px]">
+    <div class="blog">
+      <div class="blog_title flex flex-col lg:flex-row lg:items-center">
+        <h1
+          class="sm:text-[18px] md:text-[26px] lg:text-[32px] text-white basis-[50%] flex items-center gap-[12px] section-title eng-txt"
+        >
+          <span
+            class="w-[1rem] h-[1rem] rounded-full bg-red-500 border-none inline-block"
+          ></span>Other Related Articles
+        </h1>
+      </div>
+      <div class="blog_cardContainer flex-wrap flex flex-col lg:flex-row pt-16">
+        {
+          filterBlog &&
+            filterBlog.map((post) => (
+              <Blogtemplate
+                description={post.frontmatter.description}
+                paragraph={post.frontmatter.paragraph}
+                img={post.frontmatter.img}
+                url={post.url}
+              />
+            ))
+        }
+      </div>
     </div>
   </div>
 </section>
